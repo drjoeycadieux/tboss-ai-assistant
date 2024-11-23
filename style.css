@@ -1,119 +1,136 @@
-* {
+/* General Reset */
+body, h1, p, form, input, button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(circle, #1a1f2b, #0d1117);
+  color: #e6e8ea;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-  padding-bottom: 60px; /* Ensure space for fixed input at the bottom */
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 2rem 0; /* Add spacing for smooth scrolling visuals */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
 }
 
-h1 {
+/* Main Container */
+main {
+  background: rgba(24, 28, 37, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(72, 191, 227, 0.4);
+  width: 90%;
+  max-width: 450px;
+  padding: 2rem;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #333;
+  position: relative;
+  backdrop-filter: blur(12px);
+  overflow: hidden; /* Prevent overflowing content */
+  word-wrap: break-word; /* Ensure text wraps within the container */
+  overflow-wrap: break-word; /* Add support for unbroken long text */
 }
 
+/* Heading */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #48bfe3, #5a96e3);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 8px rgba(72, 191, 227, 0.7);
+  word-wrap: break-word; /* Ensure heading text fits within container */
+  overflow-wrap: break-word; /* Handle long words or phrases */
+}
+
+/* Form and Prompt Box */
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 90%;
-  max-width: 600px;
-  flex-grow: 1; /* Allow form to take available space */
-  overflow-y: auto; /* Allow scrolling if the form grows */
+  gap: 1.5rem;
 }
 
-/* Image Picker Styling - No box or border around images */
-.image-picker {
-  display: flex;
-  justify-content: space-around;
-}
-
-.image-choice {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-.image-choice input[type="radio"] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.image-choice img {
-  max-width: 100px;
-  max-height: 100px;
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.image-choice:hover img {
-  transform: scale(1.1);
-}
-
-/* Prompt Box Styling - Positioned at the bottom */
 .prompt-box {
   display: flex;
-  gap: 10px;
-  align-items: center;
   justify-content: space-between;
-  position: fixed;
-  bottom: 20px; /* Position it fixed at the bottom */
-  left: 50%;
-  transform: translateX(-50%); /* Center it horizontally */
-  width: 90%;
-  max-width: 600px; /* Same max-width as the form */
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .prompt-box input {
-  width: 100%;
-  padding: 25px;
-  border: 1px solid #ccc;
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
   border-radius: 8px;
+  background: #2a2f3b;
+  color: #e6e8ea;
   font-size: 1rem;
-  transition: border-color 0.3s ease-in-out;
+  outline: none;
+  box-shadow: inset 0 0 8px rgba(72, 191, 227, 0.2);
+  transition: box-shadow 0.3s ease;
 }
 
 .prompt-box input:focus {
-  border-color: #3498db;
-  outline: none;
+  box-shadow: 0 0 12px rgba(72, 191, 227, 0.6);
 }
 
 .prompt-box button {
-  padding: 20px 40px;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(90deg, #48bfe3, #5a96e3);
   border: none;
-  background-color: #3498db;
-  color: white;
-  font-size: 1rem;
   border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .prompt-box button:hover {
-  background-color: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(72, 191, 227, 0.6);
 }
 
-/* Output Box */
+/* Output Section */
 .output {
-  padding: 25px;
+  margin-top: 1.5rem;
   font-size: 1rem;
-  color: #7f8c8d;
-  text-align: center;
-  margin-top: 20px;
-  font-style: italic;
+  color: #8ba4b9;
+  word-wrap: break-word; /* Ensure long text wraps onto the next line */
+  overflow-wrap: break-word; /* For unbroken words or URLs */
+  white-space: normal; /* Prevent text from staying in one line */
+  max-width: 100%; /* Ensure text does not exceed the container width */
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .prompt-box {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .prompt-box input, .prompt-box button {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 0.5;
+  }
 }
