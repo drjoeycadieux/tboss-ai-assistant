@@ -81,7 +81,7 @@ form {
 
 .prompt-box input {
   width: 100%;
-  padding: 12px;
+  padding: 25px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
@@ -94,7 +94,7 @@ form {
 }
 
 .prompt-box button {
-  padding: 12px 20px;
+  padding: 20px 40px;
   border: none;
   background-color: #3498db;
   color: white;
