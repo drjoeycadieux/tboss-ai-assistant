@@ -4,28 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tboss AI</title>
   <link rel="shortcut icon" href="/tboss.png" type="image/png">
+  <title>Tboss AI</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-900 text-gray-300 flex flex-col min-h-screen">
-
-  <!-- Main Content -->
   <main class="flex-grow overflow-y-auto p-6">
     <div class="flex justify-center items-center space-x-4 mb-6">
-      <!-- Image -->
       <img src="/tboss.png" alt="Tboss AI Logo" class="w-16 h-16 rounded-full shadow-lg">
-      <!-- Heading -->
       <h1 class="text-6xl font-extrabold text-gray-100">Tboss AI</h1>
     </div>
-
     <div class="output bg-gray-800 shadow-lg rounded-xl p-6 text-gray-300 text-lg">
       <p>(Results will appear here)</p>
     </div>
   </main>
-
-  <!-- Input Form -->
   <form class="bg-gray-800 shadow-lg fixed bottom-0 left-0 right-0 p-6 flex flex-col items-center space-y-4">
     <input name="prompt" placeholder="Message TbossAI" type="text" required
       class="w-full max-w-4xl bg-gray-700 text-gray-300 border border-gray-600 rounded-lg p-4 text-xl outline-none focus:ring-4 focus:ring-gray-500 h-16 placeholder-gray-500" />
@@ -34,15 +27,6 @@
       Send
     </button>
   </form>
-
-  <!-- Script -->
-  <script>
-    // Close the banner
-    function closeBanner() {
-      const banner = document.getElementById('banner');
-      banner.style.display = 'none';
-    }
-  </script>
 
   <script type="module" src="/main-text.js"></script>
 </body>
