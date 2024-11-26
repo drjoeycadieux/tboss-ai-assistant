@@ -4,13 +4,11 @@ import { maybeShowApiKeyBanner } from './gemini-api-banner';
 import './style.css';
 
 // 🔥🔥 FILL THIS OUT FIRST! 🔥🔥
-// Get your Gemini API key by:
-// - Selecting "Add Gemini API" in the "Project IDX" panel in the sidebar
-// - Or by visiting https://g.co/ai/idxGetGeminiKey
 let API_KEY = 'AIzaSyA_-l4-8Otmcq8EKmOJ5LaVroGlb5GeGRc';
 
 let form = document.querySelector('form');
 let promptInput = document.querySelector('input[name="prompt"]');
+let modelSelect = document.querySelector('#modelSelect');  // Dropdown for selecting model
 let output = document.querySelector('.output');
 
 form.onsubmit = async (ev) => {
@@ -18,6 +16,9 @@ form.onsubmit = async (ev) => {
   output.textContent = 'Generating...';
 
   try {
+    // Get the selected model from the dropdown
+    let selectedModel = modelSelect.value;
+
     // Assemble the prompt with just the text input (no image)
     let contents = [
       {
@@ -31,7 +32,7 @@ form.onsubmit = async (ev) => {
     // Call the multimodal model, and get a stream of results
     const genAI = new GoogleGenerativeAI(API_KEY);
     const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-pro", // or gemini-1.5-flash
+      model: selectedModel, // Use the selected model from the dropdown
       safetySettings: [
         {
           category: HarmCategory.HARM_CATEGORY_HARASSMENT,

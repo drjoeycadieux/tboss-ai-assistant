@@ -19,23 +19,34 @@
       <p>(Results will appear here)</p>
     </div>
   </main>
+
   <form class="bg-gray-800 shadow-lg fixed bottom-0 left-0 right-0 p-6 flex flex-col items-center">
-    <div class="relative w-full max-w-4xl">
-      <!-- Input Field -->
-      <input name="prompt" placeholder="Message TbossAI" type="text" required
-        class="w-full bg-gray-700 text-gray-300 border border-gray-600 rounded-lg p-4 text-xl pr-20 outline-none focus:ring-4 focus:ring-gray-500 h-16 placeholder-gray-500" />
-      <!-- Button with SVG Arrow -->
-      <button type="submit"
-        class="absolute right-2 top-2 bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition h-12 flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </button>
+    <div class="relative w-full max-w-4xl flex items-center">
+      <!-- Dropdown for selecting model -->
+      <div class="mb-4 w-full">
+        <label for="modelSelect" class="block text-gray-300 text-lg mb-2">Select Model:</label>
+        <select id="modelSelect" name="model" class="w-full bg-gray-700 text-gray-300 border border-gray-600 rounded-lg p-4 text-xl outline-none focus:ring-4 focus:ring-gray-500">
+          <option value="gemini-1.5-flash">gemini-1.5-flash</option>
+          <option value="Gemini 1.5 Flash-8B">Gemini 1.5 Flash-8B</option>
+          <option value="gemini-1.5-pro">gemini-1.5-pro</option>
+        </select>
+      </div>
+
+      <!-- Input Field with Button Inside -->
+      <div class="relative w-full">
+        <input name="prompt" placeholder="Message TbossAI" type="text" required
+          class="w-full bg-gray-700 text-gray-300 border border-gray-600 rounded-lg p-4 text-xl pr-20 outline-none focus:ring-4 focus:ring-gray-500 h-16 placeholder-gray-500" />
+
+        <!-- Button with SVG Arrow -->
+        <button type="submit"
+          class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition h-12 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </div>
     </div>
   </form>
-
-
-
 
   <script type="module" src="/main-text.js"></script>
 </body>
