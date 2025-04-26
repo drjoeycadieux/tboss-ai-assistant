@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="/tboss.png" type="image/png">
-  <title>Tboss AI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tboss AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Tboss AI</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="/" class="text-blue-600 hover:text-blue-800">Home</a></li>
+                    <li><a href="/contact.html" class="text-blue-600 hover:text-blue-800">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<body class="bg-gray-900 text-gray-300 flex flex-col min-h-screen">
-  <main class="flex-grow overflow-y-auto p-6">
-    <div class="flex justify-center items-center space-x-4 mb-6">
-      <img src="/tboss.png" alt="Tboss AI Logo" class="w-16 h-16 rounded shadow-lg">
-      <h1 class="text-6xl font-extrabold text-gray-100">Tboss AI</h1>
-    </div>
-    <div class="output bg-gray-800 shadow-lg rounded-xl p-6 text-gray-300 text-lg overflow-y-auto">
-      <p>(Results will appear here)</p>
-    </div>
-  </main>
+    <main>
+        <section class="bg-gradient-to-r from-blue-200 to-blue-400 py-20">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">Welcome to Tboss AI</h2>
+                <p class="text-lg text-white mb-8">Your personal AI assistant to boost productivity and creativity.</p>
+                <a href="/ai.html" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full">Get Started</a>
+            </div>
+        </section>
 
-  <form class="bg-gray-800 shadow-lg fixed bottom-0 left-0 right-0 p-6 flex flex-col items-center w-full">
-    <div class="relative w-full max-w-4xl mb-4">
-      <label for="modelSelect" class="block text-gray-300 font-bold text-lg mb-2">Models:</label>
-      <select id="modelSelect" name="model"
-        class="w-full bg-gray-700 text-gray-300 border border-gray-600 rounded-lg p-4 text-xl outline-none focus:ring-4 focus:ring-gray-500">
-        <option value="gemini-1.5-flash">gemini-1.5-flash</option>
-        <option value="gemini-1.5-flash-8b">gemini-1.5-flash-8b</option>
-        <option value="gemini-1.5-pro">gemini-1.5-pro</option>
-      </select>
-    </div>
+        <section class="py-16">
+            <div class="container mx-auto text-center">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6">Key Features</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white shadow-md p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Intelligent Automation</h4>
+                        <p class="text-gray-600">Automate repetitive tasks and workflows.</p>
+                    </div>
+                    <div class="bg-white shadow-md p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Smart Recommendations</h4>
+                        <p class="text-gray-600">Get personalized insights and suggestions.</p>
+                    </div>
+                    <div class="bg-white shadow-md p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Creative Assistance</h4>
+                        <p class="text-gray-600">Generate ideas and content with AI.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="relative w-full max-w-4xl">
-      <input name="prompt" placeholder="Message TbossAI" type="text" required
-        class="w-full bg-gray-700 text-gray-300 border border-gray-600 rounded-lg p-4 text-xl pr-20 outline-none focus:ring-4 focus:ring-gray-500 h-16 placeholder-gray-500" />
-
-      <button type="submit"
-        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition h-12 flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </button>
-    </div>
-  </form>
-
-  <script type="module" src="/main-test.js"></script>
+    <footer class="bg-gray-800 text-white p-6 text-center">
+        <p>&copy; 2023 Tboss AI. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
