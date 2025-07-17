@@ -3,8 +3,12 @@ import MarkdownIt from 'markdown-it';
 import { maybeShowApiKeyBanner } from './gemini-api-banner';
 import './style.css';
 
-// 🔥🔥 FILL THIS OUT FIRST! 🔥🔥
-let API_KEY = 'AIzaSyA_-l4-8Otmcq8EKmOJ5LaVroGlb5GeGRc';
+// Get API key from environment variable
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!API_KEY) {
+  throw new Error('Please set VITE_GEMINI_API_KEY in your .env file');
+}
 
 let form = document.querySelector('form');
 let promptInput = document.querySelector('input[name="prompt"]');
